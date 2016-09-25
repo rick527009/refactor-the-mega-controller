@@ -13,8 +13,8 @@ class AddCompletionSegue: UIStoryboardSegue {
 		return addViewController.taskTitle
 	}
 
-	var taskDueDate: NSDate {
-		return addViewController.taskDueDate
+	var taskDueDate: Date {
+		return addViewController.taskDueDate as Date
 	}
 
 	private var addViewController: AddViewController {

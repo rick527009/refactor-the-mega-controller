@@ -9,19 +9,19 @@
 import Foundation
 
 struct RelativeTimeDateFormatter {
-    let calendar: NSCalendar
+    let calendar: Calendar
     
-    init(calendar: NSCalendar = NSCalendar.autoupdatingCurrentCalendar()) {
+    init(calendar: Calendar = Calendar.autoupdatingCurrent) {
         self.calendar = calendar
     }
     
-    func stringForDate(date: NSDate, relativeToDate baseDate: NSDate) -> String {
-        var beginningOfDate: NSDate? = nil
-        var beginningOfBaseDate: NSDate? = nil
+    func string(forDate date: Date, relativeToDate baseDate: Date) -> String {
+        var beginningOfDate: Date? = nil
+        var beginningOfBaseDate: Date? = nil
         
-        calendar.rangeOfUnit(.Day, startDate: &beginningOfDate, interval: nil, forDate: date)
-        calendar.rangeOfUnit(.Day, startDate: &beginningOfBaseDate, interval: nil, forDate: baseDate)
-        let numberOfCalendarDaysBetweenDates = calendar.components(NSCalendarUnit.Day, fromDate: beginningOfBaseDate!, toDate: beginningOfDate!, options: NSCalendarOptions()).day
+        (calendar as NSCalendar).range(of: .day, start: &beginningOfDate, interval: nil, for: date)
+        (calendar as NSCalendar).range(of: .day, start: &beginningOfBaseDate, interval: nil, for: baseDate)
+        let numberOfCalendarDaysBetweenDates = (calendar as NSCalendar).components(NSCalendar.Unit.day, from: beginningOfBaseDate!, to: beginningOfDate!, options: NSCalendar.Options()).day
         
         switch numberOfCalendarDaysBetweenDates {
         case -Int.max ... -2:

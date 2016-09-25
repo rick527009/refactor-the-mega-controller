@@ -17,14 +17,14 @@ class TaskTableViewCell: UITableViewCell {
 	var viewData: ViewData? {
 		didSet {
 			textLabel!.text = viewData?.title
-			detailTextLabel!.text = viewData?.timingDescription.lowercaseString
+			detailTextLabel!.text = viewData?.timingDescription.lowercased()
 		}
 	}
 }
 
 
 extension TaskTableViewCell.ViewData {
-	init(task: Task, relativeToDate baseDate: NSDate) {
+	init(task: Task, relativeToDate baseDate: Date) {
 		self.title = task.title
 		self.timingDescription = RelativeTimeDateFormatter().stringForDate(task.dueDate, relativeToDate: baseDate)
 	}
