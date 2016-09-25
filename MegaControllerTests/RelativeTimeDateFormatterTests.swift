@@ -19,17 +19,17 @@ class RelativeTimeDateFormatterTests: XCTestCase {
     }
     
     func testTodayDate() {
-        let testDate = (calendar as NSCalendar).date(byAdding: .hour, value: 1, to: baseDate, options: NSCalendar.Options())!
+        let testDate = calendar.date(byAdding: .hour, value: 1, to: baseDate)!
         XCTAssertEqual(dateFormatter.string(forDate: testDate, relativeToDate: baseDate), "Today")
     }
     
     func testTomorrowDate() {
-        let testDate = (calendar as NSCalendar).date(byAdding: .day, value: 1, to: baseDate, options: NSCalendar.Options())!
+        let testDate = calendar.date(byAdding: .day, value: 1, to: baseDate)!
         XCTAssertEqual(dateFormatter.string(forDate: testDate, relativeToDate: baseDate), "Tomorrow")
     }
     
     func testLaterDate() {
-        let testDate = (calendar as NSCalendar).date(byAdding: .day, value: 4, to: baseDate, options: NSCalendar.Options())!
+        let testDate = calendar.date(byAdding: .day, value: 4, to: baseDate)!
         XCTAssertEqual(dateFormatter.string(forDate: testDate, relativeToDate: baseDate), "In 4 days")
     }
 }

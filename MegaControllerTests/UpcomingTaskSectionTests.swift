@@ -19,14 +19,14 @@ class UpcomingTaskSectionTests: XCTestCase {
 	func testTaskInSeveralDaysIsInSoonSection() {
 		let baseDate = Date()
 		let calendar = Calendar.current
-		let soonDate = (calendar as NSCalendar).date(byAdding: .day, value: 3, to: baseDate, options: NSCalendar.Options())!
+		let soonDate = calendar.date(byAdding: .day, value: 3, to: baseDate)!
 		XCTAssertEqual(UpcomingTaskSection(forTaskDueDate: soonDate, baseDate: baseDate, calendar: calendar), UpcomingTaskSection.soon)
 	}
 
 	func testTaskInManyDaysIsInUpcomingSection() {
 		let baseDate = Date()
 		let calendar = Calendar.current
-		let upcomingDate = (calendar as NSCalendar).date(byAdding: .day, value: 10, to: baseDate, options: NSCalendar.Options())!
+		let upcomingDate = calendar.date(byAdding: .day, value: 10, to: baseDate)!
 		XCTAssertEqual(UpcomingTaskSection(forTaskDueDate: upcomingDate, baseDate: baseDate, calendar: calendar), UpcomingTaskSection.upcoming)
 	}
 }

@@ -16,8 +16,8 @@ class UpcomingTaskResultsCacheTests: XCTestCase {
 		let task = Task(id: "a", title: "task", dueDate: Date())
 
 		var testCache = originalCache
-		testCache.insertTask(task)
-		testCache.deleteTask(task)
+		_ = testCache.insertTask(task)
+		_ = testCache.deleteTask(task)
 		for (originalSection, testSection) in zip(originalCache.sections, testCache.sections) {
 			XCTAssertEqual(originalSection, testSection)
 		}
@@ -26,7 +26,7 @@ class UpcomingTaskResultsCacheTests: XCTestCase {
 	func testAddingTaskToEmptySection() {
 		var cache = UpcomingTaskResultsCache(initialTasksSortedAscendingByDate: [], baseDate: Date())
 		let task = Task(id: "a", title: "task", dueDate: Date())
-		cache.insertTask(task)
+		_ = cache.insertTask(task)
 		XCTAssertEqual(cache.sections[0][0], task)
 	}
 
@@ -35,7 +35,7 @@ class UpcomingTaskResultsCacheTests: XCTestCase {
 		let laterTask = Task(id: "b", title: "later task", dueDate: Date(timeIntervalSinceReferenceDate: 100))
 
 		var cache = UpcomingTaskResultsCache(initialTasksSortedAscendingByDate: [laterTask], baseDate: Date(timeIntervalSinceReferenceDate: 0))
-		cache.insertTask(earlierTask)
+		_ = cache.insertTask(earlierTask)
 		XCTAssertEqual(cache.sections[0], [earlierTask, laterTask])
 	}
 
@@ -44,7 +44,7 @@ class UpcomingTaskResultsCacheTests: XCTestCase {
 		let laterTask = Task(id: "b", title: "later task", dueDate: Date(timeIntervalSinceReferenceDate: 100))
 
 		var cache = UpcomingTaskResultsCache(initialTasksSortedAscendingByDate: [earlierTask], baseDate: Date(timeIntervalSinceReferenceDate: 0))
-		cache.insertTask(laterTask)
+		_ = cache.insertTask(laterTask)
 		XCTAssertEqual(cache.sections[0], [earlierTask, laterTask])
 	}
 

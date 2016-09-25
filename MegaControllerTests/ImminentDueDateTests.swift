@@ -19,7 +19,7 @@ class ImminentDueDateTests: XCTestCase {
     }
     
     func testPredicateDoesNotMatchFurtherDates() {
-        let twoDays = (ImminentDueDateTests.calendar as NSCalendar).date(byAdding: .day, value: 2, to: ImminentDueDateTests.referenceDate, options: NSCalendar.Options())!
+        let twoDays = ImminentDueDateTests.calendar.date(byAdding: .day, value: 2, to: ImminentDueDateTests.referenceDate)!
         XCTAssertFalse(ImminentDueDateTests.oneDayPredicate.evaluate(with: ["dueDate": twoDays]))
     }
 }
