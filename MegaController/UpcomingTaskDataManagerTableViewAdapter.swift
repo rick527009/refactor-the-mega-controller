@@ -26,7 +26,7 @@ class UpcomingTaskDataManagerTableViewAdapter<CellType: UITableViewCell>: NSObje
 	}
 
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-		upcomingTaskDataManager.deleteTask(upcomingTaskDataManager.taskSections[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row])
+		upcomingTaskDataManager.deleteTask(upcomingTaskDataManager.taskSections[indexPath.section].items[indexPath.row])
 	}
 
 	func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,7 +42,7 @@ class UpcomingTaskDataManagerTableViewAdapter<CellType: UITableViewCell>: NSObje
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let task = upcomingTaskDataManager.taskSections[(indexPath as NSIndexPath).section].items[(indexPath as NSIndexPath).row]
+		let task = upcomingTaskDataManager.taskSections[indexPath.section].items[indexPath.row]
 		let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! CellType
 		cellConfigurationHandler(cell, task)
 		return cell

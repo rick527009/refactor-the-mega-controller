@@ -24,7 +24,7 @@ struct UpcomingTaskResultsCache {
         let sectionIndex = sectionIndexForTask(task)
         let insertionIndex = sections[sectionIndex].index { task in
             let otherTaskDate = task.dueDate
-            return insertedTaskDate.compare(otherTaskDate as Date) == .orderedAscending
+            return insertedTaskDate.compare(otherTaskDate) == .orderedAscending
 		} ?? sections[sectionIndex].count
         sections[sectionIndex].insert(task, at: insertionIndex)
         
