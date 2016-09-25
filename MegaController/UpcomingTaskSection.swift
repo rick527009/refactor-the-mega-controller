@@ -14,9 +14,11 @@ enum UpcomingTaskSection: Int {
     case upcoming
     
 	init(forTaskDueDate date: Date, baseDate: Date, calendar: Calendar = Calendar.current) {
-        let numberOfDaysUntilTaskDueDate = (calendar as NSCalendar).components(NSCalendar.Unit.day, from: baseDate, to: date, options: NSCalendar.Options()).day
+        let beginningOfDate = calendar.dateInterval(of: .day, for: date)!.start
+        let beginningOfBaseDate = calendar.dateInterval(of: .day, for: baseDate)!.start
+        let numberOfDaysUntilTaskDueDate = calendar.dateComponents([.day], from: beginningOfBaseDate, to: beginningOfDate).day!
         switch numberOfDaysUntilTaskDueDate {
-        case -Int.max ... 2:
+        case -Int.max...2:
             self = .now
         case 3...5:
             self = .soon

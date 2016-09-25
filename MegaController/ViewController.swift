@@ -44,6 +44,6 @@ class ViewController: UITableViewController {
     }
 
     @IBAction func unwindFromAddController(_ segue: AddCompletionSegue) {
-		upcomingTaskDataManager.createTaskWithTitle(segue.taskTitle, dueDate: segue.taskDueDate)
+        upcomingTaskDataManager.createTask(withTitle: segue.taskTitle, dueDate: segue.taskDueDate)
     }
 }

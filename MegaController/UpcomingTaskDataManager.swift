@@ -25,19 +25,19 @@ class UpcomingTaskDataManager: NSObject, NSFetchedResultsControllerDelegate {
     var delegate: UpcomingTaskDataManagerDelegate?
     
     private let coreDataStore = CoreDataStore()
-    private var fetchedResultsController: NSFetchedResultsController<AnyObject>
+    private var fetchedResultsController: NSFetchedResultsController<NSManagedObject>
     private var resultsCache: UpcomingTaskResultsCache
     
     
     override init() {
-        let fetchRequest = NSFetchRequest(entityName: "Task")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dueDate", ascending: true)]
         fetchRequest.predicate = NSPredicate(forTasksWithinNumberOfDays: 10, ofDate: Date())
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStore.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         
         try! fetchedResultsController.performFetch()
 
-		let managedTasks = fetchedResultsController.fetchedObjects! as! [NSManagedObject]
+		let managedTasks = fetchedResultsController.fetchedObjects! 
 		resultsCache = UpcomingTaskResultsCache(initialTasksSortedAscendingByDate: managedTasks.map { Task(managedTask: $0) }, baseDate: Date())
 
         super.init()
@@ -81,10 +81,10 @@ class UpcomingTaskDataManager: NSObject, NSFetchedResultsControllerDelegate {
     }
 
 	private func managedTaskForTask(_ task: Task) -> NSManagedObject {
-		let fetchRequest = NSFetchRequest(entityName: "Task")
+		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
 		fetchRequest.predicate = NSPredicate(format: "id == %@", argumentArray: [task.id])
 		fetchRequest.fetchLimit = 1
-		let results = try! coreDataStore.managedObjectContext.fetch(fetchRequest) as! [NSManagedObject]
+		let results = try! coreDataStore.managedObjectContext.fetch(fetchRequest) 
 		return results.first!
 	}
 }

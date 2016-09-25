@@ -26,6 +26,6 @@ class TaskTableViewCell: UITableViewCell {
 extension TaskTableViewCell.ViewData {
 	init(task: Task, relativeToDate baseDate: Date) {
 		self.title = task.title
-		self.timingDescription = RelativeTimeDateFormatter().stringForDate(task.dueDate, relativeToDate: baseDate)
+        self.timingDescription = RelativeTimeDateFormatter().string(forDate: task.dueDate, relativeToDate: baseDate)
 	}
 }

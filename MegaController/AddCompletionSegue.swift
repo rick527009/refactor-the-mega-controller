@@ -18,6 +18,6 @@ class AddCompletionSegue: UIStoryboardSegue {
 	}
 
 	private var addViewController: AddViewController {
-		return sourceViewController as! AddViewController
+		return source as! AddViewController
 	}
 }

@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidFinishLaunching(_ application: UIApplication) {
         primaryViewController.navigationThemeDidChangeHandler = { [weak self] theme in
             if let navigationController = self?.navigationController {
-                navigationController.navigationBar.applyTheme(theme)
+                navigationController.navigationBar.apply(theme: theme)
                 navigationController.statusBarStyle = theme.statusBarStyle
             }
         }
