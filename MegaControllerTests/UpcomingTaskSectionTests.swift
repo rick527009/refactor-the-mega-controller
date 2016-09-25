@@ -9,7 +9,7 @@
 @testable import MegaController
 import XCTest
 
-class UpcomiungTaskSectionTests: XCTestCase {
+class UpcomingTaskSectionTests: XCTestCase {
 
 	func testTaskAtBaseDateIsInNowSection() {
 		let testDate = Date()

@@ -28,7 +28,7 @@
 		61B7AB411B9FA11B004CE41C /* NavigationThemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B7AB401B9FA11B004CE41C /* NavigationThemeTests.swift */; };
 		EB0C53031BAA20B400A9991A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0C53021BAA20B400A9991A /* Task.swift */; };
 		EB6700E91BAA2C0100DF68F7 /* UpcomingTaskResultsCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6700E81BAA2C0100DF68F7 /* UpcomingTaskResultsCacheTests.swift */; };
-		EB6700EB1BAA2ED000DF68F7 /* UpcomiungTaskSectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6700EA1BAA2ED000DF68F7 /* UpcomiungTaskSectionTests.swift */; };
+		EB6700EB1BAA2ED000DF68F7 /* UpcomingTaskSectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6700EA1BAA2ED000DF68F7 /* UpcomingTaskSectionTests.swift */; };
 		EB6700ED1BAA331100DF68F7 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6700EC1BAA331100DF68F7 /* TaskTableViewCell.swift */; };
 		EB6700EF1BAA362700DF68F7 /* AddCompletionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6700EE1BAA362700DF68F7 /* AddCompletionSegue.swift */; };
 		EB6700F31BAA377C00DF68F7 /* AddPresentationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6700F21BAA377C00DF68F7 /* AddPresentationSegue.swift */; };
@@ -72,7 +72,7 @@
 		61B7AB401B9FA11B004CE41C /* NavigationThemeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationThemeTests.swift; sourceTree = "<group>"; };
 		EB0C53021BAA20B400A9991A /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		EB6700E81BAA2C0100DF68F7 /* UpcomingTaskResultsCacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTaskResultsCacheTests.swift; sourceTree = "<group>"; };
-		EB6700EA1BAA2ED000DF68F7 /* UpcomiungTaskSectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomiungTaskSectionTests.swift; sourceTree = "<group>"; };
+		EB6700EA1BAA2ED000DF68F7 /* UpcomingTaskSectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTaskSectionTests.swift; sourceTree = "<group>"; };
 		EB6700EC1BAA331100DF68F7 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		EB6700EE1BAA362700DF68F7 /* AddCompletionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCompletionSegue.swift; sourceTree = "<group>"; };
 		EB6700F21BAA377C00DF68F7 /* AddPresentationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPresentationSegue.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 				61B7AB401B9FA11B004CE41C /* NavigationThemeTests.swift */,
 				61772D931B9FA9A900FBF11D /* RelativeTimeDateFormatterTests.swift */,
 				61772D991B9FADD200FBF11D /* ImminentDueDateTests.swift */,
-				EB6700EA1BAA2ED000DF68F7 /* UpcomiungTaskSectionTests.swift */,
+				EB6700EA1BAA2ED000DF68F7 /* UpcomingTaskSectionTests.swift */,
 				614991D71B9E3D9A005278F8 /* Info.plist */,
 				61B7AB3F1B9FA11B004CE41C /* MegaControllerTests-Bridging-Header.h */,
 				EB6700E81BAA2C0100DF68F7 /* UpcomingTaskResultsCacheTests.swift */,
@@ -287,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB6700E91BAA2C0100DF68F7 /* UpcomingTaskResultsCacheTests.swift in Sources */,
-				EB6700EB1BAA2ED000DF68F7 /* UpcomiungTaskSectionTests.swift in Sources */,
+				EB6700EB1BAA2ED000DF68F7 /* UpcomingTaskSectionTests.swift in Sources */,
 				61772D9A1B9FADD200FBF11D /* ImminentDueDateTests.swift in Sources */,
 				61B7AB411B9FA11B004CE41C /* NavigationThemeTests.swift in Sources */,
 				61772D941B9FA9A900FBF11D /* RelativeTimeDateFormatterTests.swift in Sources */,
