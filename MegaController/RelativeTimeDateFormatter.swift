@@ -16,8 +16,8 @@ struct RelativeTimeDateFormatter {
     }
     
     func string(forDate date: Date, relativeToDate baseDate: Date) -> String {
-        let beginningOfDate = calendar.dateInterval(of: .day, for: date)!.start
-        let beginningOfBaseDate = calendar.dateInterval(of: .day, for: baseDate)!.start
+        let beginningOfDate = calendar.startOfDay(for: date)
+        let beginningOfBaseDate = calendar.startOfDay(for: baseDate)
         let numberOfCalendarDaysBetweenDates = calendar.dateComponents([.day], from: beginningOfBaseDate, to: beginningOfDate).day!
 
         switch numberOfCalendarDaysBetweenDates {

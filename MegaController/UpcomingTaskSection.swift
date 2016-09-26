@@ -14,8 +14,8 @@ enum UpcomingTaskSection: Int {
     case upcoming
     
 	init(forTaskDueDate date: Date, baseDate: Date, calendar: Calendar = Calendar.current) {
-        let beginningOfDate = calendar.dateInterval(of: .day, for: date)!.start
-        let beginningOfBaseDate = calendar.dateInterval(of: .day, for: baseDate)!.start
+        let beginningOfDate = calendar.startOfDay(for: date)
+        let beginningOfBaseDate = calendar.startOfDay(for: baseDate)
         let numberOfDaysUntilTaskDueDate = calendar.dateComponents([.day], from: beginningOfBaseDate, to: beginningOfDate).day!
         switch numberOfDaysUntilTaskDueDate {
         case -Int.max...2:
